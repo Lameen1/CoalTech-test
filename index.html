@@ -1,0 +1,316 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+  <header id="header-bar">
+    <div id="left-header"></div>
+    <nav id="middle-header">
+      <a>
+        <img src="assests/home_icon.svg" alt="Home icon">
+        <h1 class="body-emphasized-14pt">Overview</h1>
+      </a>
+      <a class="selected-task">
+        <img src="assests/group_icon.svg" alt="Group icon">
+        <h1 class="body-emphasized-14pt">Patients</h1>
+      </a>
+      <a>
+        <img src="assests/calender_icon.svg" alt="Calender Icon">
+        <h1 class="body-emphasized-14pt">Schedule</h1>
+      </a>
+      <a>
+        <img src="assests/chat_icon.svg" alt="Chat Icon">
+        <h1 class="body-emphasized-14pt">Message</h1>
+      </a>
+      <a>
+        <img src="assests/creditcard_icon.svg" alt="Credit Card Icon">
+        <h1 class="body-emphasized-14pt">Transactions</h1>
+      </a>
+    </nav>
+    <div id="right-header">
+      <div class="user-profile">
+        <img class="profile-picture" src="assests/senoir_woman.png" alt="Senoir Woman">
+        <div class="profile-info">
+          <div class="body-emphasized-14pt">Dr. Jose Simmons</div>
+          <div class="body-secondary-info-14pt">General Practitioner</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="settings-container">
+        <img src="assests/settings_icon.svg" alt="Setting Icon">
+        <img src="assests/more_vert.svg" alt="More Icon">
+      </div>
+    </div>
+  </header>
+  <main>
+  <section class="patients-section">
+    <div class="patient-title-container">
+      <div class="card-title-24pt">Patients</div>
+      <img src="assests/search-icon.svg" alt="Search Icon">
+    </div>
+    <div id="patient-list"></div>
+  </section>
+  <section class="main-middle">
+    <div class="diagnosis-section">
+      <div class="card-title-24pt">Diagnosis History</div>
+      <div class="blood-pressure-container">
+        <div class="graph-section">
+          <div class="graph-title-container">
+            <h3 class="graph-title">Blood Pressure</h3>
+            <div class="graph-time-container">
+              <div class="graph-time">Last 6 months</div>
+              <img src="assests/expand.svg" alt="Expand">
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="legend-section">
+          <div>
+            <div>
+              <div class="legend-top">
+                <div class="pink-dot"></div>
+                <p class="pressure-tag">Systolic</p>
+              </div>
+            </div>
+            <div class="pressure-number">160</div>
+            <div class="legend-bottom">
+              <img src="assests/ArrowUp.svg" alt="Up Arrow">
+              <p class="pressure-average">Higher Than Average</p>
+            </div>
+            <div class="horiz-divider"></div>
+          </div>
+          <div>
+            <div class="legend-top">
+              <div class="purple-dot"></div>
+              <p class="pressure-tag">Diastolic</p>
+            </div>
+            <div class="pressure-number">78</div>
+            <div class="legend-bottom">
+              <img src="assests/ArrowDown.svg" alt="Down Arrow">
+              <p class="pressure-average">Lower Than Average</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="check-up-container">
+        <div class="resp-container">
+          <div class="check-content-container">
+            <img class="check-up-image" src="assests/respiratory rate.svg" alt="Lungs">
+            <div class="check-up-middle">
+              <h3 class="check-up-name">Respiratory Rate</h3>
+              <p class="check-up-stats">20 bpm</p>
+            </div>
+            <p class="check-up-status">Normal</p>
+          </div>
+        </div>
+        <div class="temp-container">
+          <div class="check-content-container">
+            <img class="check-up-image" src="assests/temperature.svg" alt="Lungs">
+            <div class="check-up-middle">
+              <h3 class="check-up-name">Temperature</h3>
+              <p class="check-up-stats">98.6°F</p>
+            </div>
+            <p class="check-up-status">Normal</p>
+          </div>
+        </div>
+        <div class="heart-container">
+          <div class="check-content-container">
+            <img class="check-up-image" src="assests/temperature.svg" alt="Lungs">
+            <div class="check-up-middle">
+              <h3 class="check-up-name">Heart Rate</h3>
+              <p class="check-up-stats">78 bpm</p>
+            </div>
+            <div class="check-up-bottom">
+              <img src="assests/ArrowDown.svg" alt="Down Arrow">
+              <p class="check-up-status">Lower Than Average</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="diag-list-container">
+      <h2 class="list-title">Diagnostic List</h2>
+      <div class="top-list">
+        <div class="problem">Problem/Diagnosis</div>
+        <div class="descript">Description</div>
+        <div class="status-list">Status</div>
+      </div>
+      <div class="list-content-container">
+        
+      </div>
+    </div>
+  </section>
+  <section class="right-section">
+    <div class="details-patient-section">
+      <div class="top-patient-profile">
+        <img class="jess-picture" src="assests/Layer 2.png" alt="Picture Jessica Taylor">
+        <h2 class="patient-profile-name">Jessica Taylor</h2>
+      </div>
+      <div class="bottom-patient-profile">
+        <div class="detail-of-patient">
+          <img src="assests/BirthIcon.svg" alt="Birthday icon">
+          <div class="detail-of-patient-containter">
+            <div class="top-of-detail">Gender</div>
+            <div class="bottom-of-detail">Female</div>
+          </div>
+        </div>
+        <div class="detail-of-patient">
+          <img src="assests/FemaleIcon.svg" alt="Female Icon">
+          <div class="detail-of-patient-containter">
+            <div class="top-of-detail">Contact Info.</div>
+            <div class="bottom-of-detail">(415) 555-1234</div>
+          </div>
+        </div>
+        <div class="detail-of-patient">
+          <img src="assests/PhoneIcon.svg" alt="Phone Icon">
+          <div class="detail-of-patient-containter">
+            <div class="top-of-detail">Emergency Contacts</div>
+            <div class="bottom-of-detail">(415) 555-5678</div>
+          </div>
+        </div>
+        <div class="detail-of-patient">
+          <img src="assests/PhoneIcon.svg" alt="Phone icon">
+          <div class="detail-of-patient-containter">
+            <div class="top-of-detail">Date of Birth</div>
+            <div class="bottom-of-detail">August 23, 1996</div>
+          </div>
+        </div>
+        <div class="detail-of-patient">
+          <img src="assests/InsuranceIcon.svg" alt="Insurance Icon">
+          <div class="detail-of-patient-containter">
+            <div class="top-of-detail">Insurance Provider</div>
+            <div class="bottom-of-detail">Sunrise Health Assurance</div>
+          </div>
+        </div>
+      </div>
+      <div class="show-info-container">
+        <button class="show-all-info-button">Show All Infomation</button>
+      </div>
+    </div>
+    <div class="lab-results-container">
+      <h2 class="lab-results-title">Lab Results</h2>
+      <div id="results-container">
+
+      </div>
+    </div>
+  </section>
+
+  <div></div>
+</main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Oct, 2023', 'Nov, 2023', 'Dec, 2023', 'Jan,2024', 'Feb, 2024', 'Mar, 2024'],
+        datasets: [{
+          label: '# of Votes',
+          data: [103, 103, 111, 86, 73, 78],
+          lineTension: 0.4,
+          pointBackgroundColor: '#8C6FE6',
+          borderColor: '#7E6CAB',
+          pointBorderColor: '#FFFFFF',
+          pointRadius: 7,
+        },
+          {
+          label: '# of Votes',
+          data: [125, 173, 91, 128, 119, 160],
+          lineTension: 0.4,
+          pointBackgroundColor: '#C26EB4',
+          borderColor: '#C26EB4',
+          pointBorderColor: '#FFFFFF',
+          pointRadius: 7,
+        }],
+      },
+      
+      options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+    
+    let username = 'coalition'
+    let password = 'skills-test'
+    let auth = btoa(`${username}:${password}`)
+
+    fetch('https://fedskillstest.coalitiontechnologies.workers.dev', {
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'Content-Type': 'application/json'
+      }
+    }).then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw response;
+    })
+    .then (data => {
+
+      let jessInfo = data[3]
+      
+      data.forEach(e => {
+        $("#patient-list").append(
+          `<div id="patient">
+            <div class="patient-quick-info">
+              <img class="patients-picture" src="${e.profile_picture}"/>
+              <div class="patient-middle">
+                <div class="body-emphasized-14pt">${e.name}</div>
+                <div class="body-secondary-info-14pt">${e.gender}, ${e.age}</div>
+              </div>
+            </div>
+            <img src="assests/more_horiz.svg" />
+          </div>`);
+      });
+      jessInfo.diagnostic_list.forEach(e => {
+        $('.list-content-container').append(
+          ` <div>
+              <div class="diagnosis-info-block">
+                <div class="problem-section-block">${e.name}</div>
+                <div class="descript-section-block">${e.description}</div>
+                <div class="status-section-block">${e.status}</div>
+              </div>
+              <div class="diagnosis-list-divider"></div>
+            </div>`
+        )
+      })
+      jessInfo.lab_results.forEach(e => {
+        $('#results-container').append(
+          `
+          <div class="lab-result">
+            <div class="lab-name">${e}</div>
+            <img src="assests/download.svg" alt="Download Icon">
+          </div>
+          `
+        )
+      })
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+
+    
+    
+  </script>
+  
+</body>
+</html>
