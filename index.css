@@ -130,7 +130,7 @@ body {
   height: 48px;
   width: 211px;
   background-color: red;
-  background: url("/assests/TestLogo.svg");
+  background: url("assests/TestLogo.svg");
   background-repeat: no-repeat;
 }
 
